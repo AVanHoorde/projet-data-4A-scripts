@@ -1,0 +1,7 @@
+"Time Of Day","Origin Movement ID","Origin Display Name","Destination Movement ID","Destination Display Name","Date Range","Mean Travel Time (Seconds)","Range - Lower Bound Travel Time (Seconds)","Range - Upper Bound Travel Time (Seconds)"
+"Daily Average","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",,,
+"AM Peak","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",410,141,1196
+"Midday","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",494,188,1299
+"PM Peak","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",575,219,1506
+"Evening","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",371,144,956
+"Early Morning","4","Hôtel de Ville, Paris","1","Châtelet - Les Halles, Paris","12/1/2019 - 12/31/2019, Every day",257,95,693
