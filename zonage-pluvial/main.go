@@ -6,18 +6,16 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"time"
 
 	_ "github.com/lib/pq"
 )
 
-// Validation is the struct for each validation record
-type Validation struct {
-	Jour           time.Time
-	LibelleArret   string
-	CategorieTitre string
-	NbVald         int
-	IsInt          bool
+// Zonage is the struct for each zonage record
+type Zonage struct {
+	Type               string
+	SuperficieHectares float64
+	GeoShape           string
+	GeoPoint           string
 }
 
 func main() {
@@ -25,7 +23,7 @@ func main() {
 	if err != nil {
 		fmt.Println("Error connecting to database", db)
 	}
-	f, err := os.Open("validations-metro-2019.csv")
+	f, err := os.Open("zonage-pluvial.csv")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
@@ -43,37 +41,26 @@ func main() {
 		fmt.Println(err)
 	}
 	// fmt.Println("Records:", records)
-	validations := []Validation{}
+	zonages := []Zonage{}
 	for indexRecords, record := range records {
 		if indexRecords > 0 {
-			v := Validation{
-				LibelleArret:   record[1],
-				CategorieTitre: record[2],
+			z := Zonage{
+				Type:     record[0],
+				GeoShape: record[2],
+				GeoPoint: record[3],
 			}
 			for indexFields, field := range record {
 				switch indexFields {
-				case 0:
-					t, err := time.Parse("2006-01-02", field)
+				case 1:
+					i, err := strconv.ParseFloat(field, 64)
 					if err != nil {
-						fmt.Println("Error converting time:", t)
+						fmt.Println("Error converting float64")
 					}
-					v.Jour = t
-				case 3:
-					i, err := strconv.Atoi(field)
-					if err != nil {
-						fmt.Println("Error converting int")
-					}
-					v.NbVald = i
-				case 4:
-					b, err := strconv.ParseBool(field)
-					if err != nil {
-						fmt.Println("Error converting bool")
-					}
-					v.IsInt = b
+					z.SuperficieHectares = i
 				}
-				validations = append(validations, v)
+				zonages = append(zonages, z)
 				// fmt.Println(v)
-				_, err := txn.Exec("INSERT INTO validations_metro_2019 (jour, libelle_arret, categorie_titre, nb_vald, is_int) VALUES ($1, $2, $3, $4, $5);", v.Jour, v.LibelleArret, v.CategorieTitre, v.NbVald, v.IsInt)
+				_, err := txn.Exec("INSERT INTO zonage_pluvial (type, superficie_hectares, geo_shape, geo_point_2d) VALUES ($1, $2, $3, $4);", z.Type, z.SuperficieHectares, z.GeoShape, z.GeoPoint)
 				if err != nil {
 					fmt.Println("Error inserting:", err)
 				}
@@ -81,7 +68,7 @@ func main() {
 		}
 	}
 	fmt.Println("Nombre de lignes dans le CSV: ", len(records))
-	fmt.Println("Nombre de validations: ", len(validations))
+	fmt.Println("Nombre de zonages: ", len(zonages))
 	err = txn.Commit()
 	if err != nil {
 		fmt.Println("Error with transaction:", err)
