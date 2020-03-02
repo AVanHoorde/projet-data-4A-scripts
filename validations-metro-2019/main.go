@@ -86,4 +86,5 @@ func main() {
 	if err != nil {
 		fmt.Println("Error with transaction:", err)
 	}
+	db.Close()
 }
