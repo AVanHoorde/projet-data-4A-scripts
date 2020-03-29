@@ -8,7 +8,7 @@ import (
 	"strconv"
 
 	_ "github.com/lib/pq"
-	database "github.com/louisl98/scripts"
+	database "github.com/louisl98/go-csv-sql"
 )
 
 type espaceVert struct {
