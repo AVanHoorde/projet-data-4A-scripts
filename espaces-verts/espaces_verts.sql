@@ -1,33 +1,33 @@
 CREATE TABLE espaces_verts (
-	identifiant VARCHAR,
-    nom
-    typologie
-    categorie
-    adresse_numero
-    AdresseComplement
-    AdresseTypeVoie
-    AdresseLibelleVoie
-    CodePostal
-    SurfaceCalculee
-    SuperficieTotaleReelle
-    SurfaceHorticole
-    PresenceCloture
-    Perimetre
-    AnneeOuverture
-    AnneeRenovation
-    AncienNom
-    AnneeChangementNom
-    NombreEntites
-    Ouverture24
-    IdentifiantDivision
-    IdentifiantAtelierHorticole
-    Ida3dEnb
-    SiteVilles
-    IdentifiantEquipement
-    Competence
-    GeoShape
-    URLPlan
-    GeoPoint
+	identifiant INT,
+    nom VARCHAR,
+    typologie VARCHAR,
+    categorie VARCHAR,
+    adresse_numero INT,
+    AdresseComplement VARCHAR,
+    AdresseTypeVoie VARCHAR,
+    AdresseLibelleVoie VARCHAR,
+    CodePostal INT,
+    SurfaceCalculee INT,
+    SuperficieTotaleReelle INT,
+    SurfaceHorticole INT,
+    PresenceCloture VARCHAR,
+    Perimetre FLOAT,
+    AnneeOuverture INT,
+    AnneeRenovation INT,
+    AncienNom VARCHAR,
+    AnneeChangementNom INT,
+    NombreEntites INT,
+    Ouverture24 VARCHAR,
+    IdentifiantDivision INT,
+    IdentifiantAtelierHorticole INT,
+    Ida3dEnb VARCHAR,
+    SiteVilles VARCHAR,
+    IdentifiantEquipement VARCHAR,
+    Competence VARCHAR,
+    GeoShape VARCHAR,
+    URLPlan VARCHAR,
+    GeoPoint VARCHAR
 );
 
 -- Run main.go then execute the following
