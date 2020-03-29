@@ -8,10 +8,11 @@ import (
 	"strconv"
 
 	_ "github.com/lib/pq"
+	database "github.com/louisl98/scripts"
 )
 
 type espaceVert struct {
-	Identifiant                 int32
+	Identifiant                 int
 	Nom                         string
 	Typologie                   string
 	Categorie                   string
@@ -43,7 +44,7 @@ type espaceVert struct {
 }
 
 func main() {
-	db, err := sql.Open("postgres", "postgres://student:gM4eyA2468DCsQeRBNvcHGYUt5@equipe-01.cqf0cfj75jd4.eu-west-3.rds.amazonaws.com:5432/postgres")
+	db, err := sql.Open(database.Type, database.URI)
 	if err != nil {
 		fmt.Println("Error connecting to database", db)
 	}
@@ -67,18 +68,103 @@ func main() {
 	for indexRecords, record := range records {
 		if indexRecords > 0 {
 			e := espaceVert{
-				Type:     record[0],
-				GeoShape: record[2],
-				GeoPoint: record[3],
+				Nom:                   record[1],
+				Typologie:             record[2],
+				Categorie:             record[3],
+				AdresseComplement:     record[5],
+				AdresseTypeVoie:       record[6],
+				AdresseLibelleVoie:    record[7],
+				PresenceCloture:       record[12],
+				AncienNom:             record[16],
+				Ouverture24:           record[19],
+				Ida3dEnb:              record[22],
+				SiteVilles:            record[23],
+				IdentifiantEquipement: record[24],
+				Competence:            record[25],
+				GeoShape:              record[26],
+				URLPlan:               record[27],
+				GeoPoint:              record[28],
 			}
 			for indexFields, field := range record {
 				switch indexFields {
-				case 1:
+				case 0:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.Identifiant = i
+				case 4:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.AdresseNumero = i
+				case 8:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.CodePostal = i
+				case 9:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.SurfaceCalculee = i
+				case 10:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.SuperficieTotaleReelle = i
+				case 11:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.SurfaceHorticole = i
+				case 13:
 					i, err := strconv.ParseFloat(field, 64)
 					if err != nil {
 						fmt.Println("Error converting float64")
 					}
-					e.SuperficieHectares = i
+					e.Perimetre = i
+				case 14:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.AnneeOuverture = i
+				case 15:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.AnneeRenovation = i
+				case 17:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.AnneeChangementNom = i
+				case 18:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.NombreEntites = i
+				case 20:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.IdentifiantDivision = i
+				case 21:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					e.IdentifiantAtelierHorticole = i
 				}
 				espacesVerts = append(espacesVerts, e)
 				// fmt.Println(v)
