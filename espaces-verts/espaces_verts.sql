@@ -33,4 +33,4 @@ CREATE TABLE espaces_verts (
 -- Run main.go then execute the following
 
 UPDATE espaces_verts
-SET geo_shape = REPLACE(geo_shape, '"', '''')
+    SET geo_shape = REPLACE(geo_shape, '"', '''');
