@@ -3,3 +3,4 @@ github.com/lib/pq v1.3.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
 github.com/louisl98/go-CSV-SQL v0.0.0-20200329212457-74fa06291a71 h1:KHyyJ6OX4MRwYq1cr+4RFQ++HqRcIfsq03Qpd7hzeHQ=
 github.com/louisl98/go-CSV-sql v0.0.0-20200329212457-74fa06291a71 h1:Ucsu7U9PvIQJ7d+RNHbGmuTAO0EjOjYIj+zG5UyF8vw=
 github.com/louisl98/projet-data-scripts v0.0.0-20200329212457-74fa06291a71 h1:ScTGih/EZ4IQQbXKBO0Br0isbmz8NvaTP+6+d1Tmjv8=
+github.com/louisl98/projet-data-scripts v0.0.0-20200330152045-317a67ae1c3e h1:HCbLOjsh5XweWnu0cw2qTc1orKYqKSEDfO3+uVNMWgE=

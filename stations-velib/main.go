@@ -5,12 +5,27 @@ import (
 	"encoding/csv"
 	"fmt"
 	"os"
+	"strconv"
+	"time"
 
 	_ "github.com/lib/pq"
 	database "github.com/louisl98/projet-data-scripts"
 )
 
 type station struct {
+	IdentifiantStation          int
+	NomStation                  string
+	CapaciteStation             int
+	NombreBornettesLibres       int
+	NombreTotalVelosDisponibles int
+	VelosMecaniquesDisponibles  int
+	VelosElectriquesDisponibles int
+	BornePaiementDispo          string
+	RetourVelibPossible         string
+	DerniereActualisation       time.Time
+	Coordonnees                 string
+	NomCommunesEquipees         string
+	CodeInseeCommunesEquipees   int
 }
 
 func main() {
@@ -18,7 +33,7 @@ func main() {
 	if err != nil {
 		fmt.Println("Error connecting to database", db)
 	}
-	f, err := os.Open("espaces_verts.csv")
+	f, err := os.Open("stations_velib.csv")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
@@ -34,120 +49,75 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	// espacesVerts := []espaceVert{}
+	stations := []station{}
 	for indexRecords, record := range records {
 		if indexRecords > 0 {
-			// e := espaceVert{
-			// 	Nom:                   record[1],
-			// 	Typologie:             record[2],
-			// 	Categorie:             record[3],
-			// 	AdresseComplement:     record[5],
-			// 	AdresseTypeVoie:       record[6],
-			// 	AdresseLibelleVoie:    record[7],
-			// 	PresenceCloture:       record[12],
-			// 	AncienNom:             record[16],
-			// 	Ouverture24:           record[19],
-			// 	Ida3dEnb:              record[22],
-			// 	SiteVilles:            record[23],
-			// 	IdentifiantEquipement: record[24],
-			// 	Competence:            record[25],
-			// 	GeoShape:              record[26],
-			// 	URLPlan:               record[27],
-			// 	GeoPoint:              record[28],
-			// }
+			s := station{
+				NomStation:          record[1],
+				BornePaiementDispo:  record[7],
+				RetourVelibPossible: record[8],
+				Coordonnees:         record[10],
+				NomCommunesEquipees: record[11],
+			}
 			for indexFields, field := range record {
 				fmt.Println(indexFields, field)
-				// switch indexFields {
-				// case 0:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.Identifiant = i
-				// case 4:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.AdresseNumero = i
-				// case 8:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.CodePostal = i
-				// case 9:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.SurfaceCalculee = i
-				// case 10:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.SuperficieTotaleReelle = i
-				// case 11:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.SurfaceHorticole = i
-				// case 13:
-				// 	i, err := strconv.ParseFloat(field, 64)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting float64")
-				// 	}
-				// 	e.Perimetre = i
-				// case 14:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.AnneeOuverture = i
-				// case 15:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.AnneeRenovation = i
-				// case 17:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.AnneeChangementNom = i
-				// case 18:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.NombreEntites = i
-				// case 20:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.IdentifiantDivision = i
-				// case 21:
-				// 	i, err := strconv.Atoi(field)
-				// 	if err != nil {
-				// 		fmt.Println("Error converting int")
-				// 	}
-				// 	e.IdentifiantAtelierHorticole = i
-				// }
-				// espacesVerts = append(espacesVerts, e)
-				// fmt.Println(v)
-				// _, err := txn.Exec("INSERT INTO espaces_verts (identifiant_espace_vert, nom, typologie, categorie, adresse_numero, adresse_complement, adresse_type_voie, adresse_libelle_voie, code_postal, surface_calculee, superficie_totale_reelle, surface_horticole, presence_cloture, perimetre, annee_ouverture, annee_renovation, ancien_nom, annee_changement_nom, nombre_entites, ouverture_24h_24h, id_division, id_atelier_horticole, ida3d_enb, site_villes, id_eqpt, competence, geo_shape, url_plan, geo_point) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29);", e.Identifiant, e.Nom, e.Typologie, e.Categorie, e.AdresseNumero, e.AdresseComplement, e.AdresseTypeVoie, e.AdresseLibelleVoie, e.CodePostal, e.SurfaceCalculee, e.SuperficieTotaleReelle, e.SurfaceHorticole, e.PresenceCloture, e.Perimetre, e.AnneeOuverture, e.AnneeRenovation, e.AncienNom, e.AnneeChangementNom, e.NombreEntites, e.Ouverture24, e.IdentifiantDivision, e.IdentifiantAtelierHorticole, e.Ida3dEnb, e.SiteVilles, e.IdentifiantEquipement, e.Competence, e.GeoShape, e.URLPlan, e.GeoPoint)
+				switch indexFields {
+				case 0:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.IdentifiantStation = i
+				case 2:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.CapaciteStation = i
+				case 3:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.NombreBornettesLibres = i
+				case 4:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.NombreTotalVelosDisponibles = i
+				case 5:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.VelosMecaniquesDisponibles = i
+				case 6:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.VelosElectriquesDisponibles = i
+				case 9:
+					i := field.String()
+					s.DerniereActualisation = i
+				case 12:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
+					s.CodeInseeCommunesEquipees = i
+				}
+				stations = append(stations, s)
+				_, err := txn.Exec("INSERT INTO stations_velib (identifiant_station, nom_station, capacite_station, nb_bornettes_libres, nb_total_velos_dispo, velos_mecaniques_dispo, velos_electriques_dispo, borne_paiement_dispo, retour_velib_possible, derniere_actualisation, coordonnees, nom_communes_equipees, code_insee_communes_equipees) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);", s.IdentifiantStation, s.NomStation, s.CapaciteStation, s.NombreBornettesLibres, s.NombreTotalVelosDisponibles, s.VelosMecaniquesDisponibles, s.VelosElectriquesDisponibles, s.BornePaiementDispo, s.RetourVelibPossible, s.DerniereActualisation, s.Coordonnees, s.NomCommunesEquipees, s.CodeInseeCommunesEquipees)
 				if err != nil {
 					fmt.Println("Error inserting:", err)
 				}
 			}
 		}
 	}
-	fmt.Println("Nombre de lignes dans le CSV: ", len(records))
-	// fmt.Println("Nombre d'espaces vets: ", len(espacesVerts))
+	fmt.Println("Nombre de lignes dans le CSV : ", len(records))
+	fmt.Println("Nombre de stations : ", len(stations))
 	err = txn.Commit()
 	if err != nil {
 		fmt.Println("Error with transaction:", err)

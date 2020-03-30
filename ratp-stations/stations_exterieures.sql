@@ -5,6 +5,8 @@ CREATE TABLE ratp_stations (
     coordinates VARCHAR NOT NULL
 );
 
+-- Run main.go
+
 ALTER TABLE ratp_stations
     ADD Outside BOOLEAN
     DEFAULT FALSE NOT NULL;

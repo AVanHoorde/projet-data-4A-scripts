@@ -1,5 +1,5 @@
 CREATE TABLE espaces_verts (
-	identifiant INT,
+	identifiant INT NOT NULL,
     nom VARCHAR,
     typologie VARCHAR,
     categorie VARCHAR,
@@ -25,7 +25,7 @@ CREATE TABLE espaces_verts (
     SiteVilles VARCHAR,
     IdentifiantEquipement VARCHAR,
     Competence VARCHAR,
-    GeoShape VARCHAR,
+    GeoShape VARCHAR NOT NULL,
     URLPlan VARCHAR,
     GeoPoint VARCHAR
 );

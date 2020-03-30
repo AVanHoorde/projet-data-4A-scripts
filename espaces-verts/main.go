@@ -167,7 +167,6 @@ func main() {
 					e.IdentifiantAtelierHorticole = i
 				}
 				espacesVerts = append(espacesVerts, e)
-				// fmt.Println(v)
 				_, err := txn.Exec("INSERT INTO espaces_verts (identifiant_espace_vert, nom, typologie, categorie, adresse_numero, adresse_complement, adresse_type_voie, adresse_libelle_voie, code_postal, surface_calculee, superficie_totale_reelle, surface_horticole, presence_cloture, perimetre, annee_ouverture, annee_renovation, ancien_nom, annee_changement_nom, nombre_entites, ouverture_24h_24h, id_division, id_atelier_horticole, ida3d_enb, site_villes, id_eqpt, competence, geo_shape, url_plan, geo_point) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29);", e.Identifiant, e.Nom, e.Typologie, e.Categorie, e.AdresseNumero, e.AdresseComplement, e.AdresseTypeVoie, e.AdresseLibelleVoie, e.CodePostal, e.SurfaceCalculee, e.SuperficieTotaleReelle, e.SurfaceHorticole, e.PresenceCloture, e.Perimetre, e.AnneeOuverture, e.AnneeRenovation, e.AncienNom, e.AnneeChangementNom, e.NombreEntites, e.Ouverture24, e.IdentifiantDivision, e.IdentifiantAtelierHorticole, e.Ida3dEnb, e.SiteVilles, e.IdentifiantEquipement, e.Competence, e.GeoShape, e.URLPlan, e.GeoPoint)
 				if err != nil {
 					fmt.Println("Error inserting:", err)
@@ -175,8 +174,8 @@ func main() {
 			}
 		}
 	}
-	fmt.Println("Nombre de lignes dans le CSV: ", len(records))
-	fmt.Println("Nombre d'espaces vets: ", len(espacesVerts))
+	fmt.Println("Nombre de lignes dans le CSV : ", len(records))
+	fmt.Println("Nombre d'espaces verts : ", len(espacesVerts))
 	err = txn.Commit()
 	if err != nil {
 		fmt.Println("Error with transaction:", err)
