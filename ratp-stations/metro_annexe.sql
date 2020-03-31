@@ -3,7 +3,7 @@ ALTER TABLE "ratp_stations"
 
 /* Source: https://fr.wikipedia.org/wiki/M%C3%A9tro_de_Paris#Lignes_en_service */ 
 
-CREATE TABLE metro_paris (
+CREATE TABLE metro_annexe (
 	ligne VARCHAR NOT NULL,
 	parcours VARCHAR NOT NULL,
 	mise_en_service INT NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE metro_paris (
 	millions_voyageurs_2017 FLOAT NOT NULL
 );
 
-INSERT INTO metro_paris (ligne, parcours, mise_en_service, dernier_prolongement, longueur_km_surface, nombre_stations, materiel, voitures_par_rame, nombre_rames_pointe, nombre_total_rames, millions_voyageurs_2017) 
+INSERT INTO metro_annexe (ligne, parcours, mise_en_service, dernier_prolongement, longueur_km_surface, nombre_stations, materiel, voitures_par_rame, nombre_rames_pointe, nombre_total_rames, millions_voyageurs_2017) 
 	VALUES
 		('1', 'La Défense - Château de Vincennes', 1900, 1992, 16.6, 25, MP 05, 6, 45, 56, 181.2),
 		('2', 'Porte Dauphine - Nation', 1900, 1903, 12.3, 25, MF 01,	5, 37, 46, 105.2),

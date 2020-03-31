@@ -1,4 +1,4 @@
-CREATE TABLE trajets (
+CREATE TABLE trajets_app (
     id INT,
     coords_point_depart VARCHAR NOT NULL,
     coords_point_arrivee VARCHAR NOT NULL,
