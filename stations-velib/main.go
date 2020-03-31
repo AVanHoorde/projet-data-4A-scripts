@@ -15,6 +15,7 @@ import (
 type station struct {
 	IdentifiantStation          int
 	NomStation                  string
+	StationFonctionnement       string
 	CapaciteStation             int
 	NombreBornettesLibres       int
 	NombreTotalVelosDisponibles int
@@ -53,11 +54,12 @@ func main() {
 	for indexRecords, record := range records {
 		if indexRecords > 0 {
 			s := station{
-				NomStation:          record[1],
-				BornePaiementDispo:  record[7],
-				RetourVelibPossible: record[8],
-				Coordonnees:         record[10],
-				NomCommunesEquipees: record[11],
+				NomStation:            record[1],
+				StationFonctionnement: record[2],
+				BornePaiementDispo:    record[8],
+				RetourVelibPossible:   record[9],
+				Coordonnees:           record[11],
+				NomCommunesEquipees:   record[12],
 			}
 			for indexFields, field := range record {
 				fmt.Println(indexFields, field)
@@ -68,40 +70,40 @@ func main() {
 						fmt.Println("Error converting int")
 					}
 					s.IdentifiantStation = i
-				case 2:
-					i, err := strconv.Atoi(field)
-					if err != nil {
-						fmt.Println("Error converting int")
-					}
-					s.CapaciteStation = i
 				case 3:
 					i, err := strconv.Atoi(field)
 					if err != nil {
 						fmt.Println("Error converting int")
 					}
-					s.NombreBornettesLibres = i
+					s.CapaciteStation = i
 				case 4:
 					i, err := strconv.Atoi(field)
 					if err != nil {
 						fmt.Println("Error converting int")
 					}
-					s.NombreTotalVelosDisponibles = i
+					s.NombreBornettesLibres = i
 				case 5:
 					i, err := strconv.Atoi(field)
 					if err != nil {
 						fmt.Println("Error converting int")
 					}
-					s.VelosMecaniquesDisponibles = i
+					s.NombreTotalVelosDisponibles = i
 				case 6:
 					i, err := strconv.Atoi(field)
 					if err != nil {
 						fmt.Println("Error converting int")
 					}
+					s.VelosMecaniquesDisponibles = i
+				case 7:
+					i, err := strconv.Atoi(field)
+					if err != nil {
+						fmt.Println("Error converting int")
+					}
 					s.VelosElectriquesDisponibles = i
-				case 9:
+				case 10:
 					i := field.String()
 					s.DerniereActualisation = i
-				case 12:
+				case 13:
 					i, err := strconv.Atoi(field)
 					if err != nil {
 						fmt.Println("Error converting int")
