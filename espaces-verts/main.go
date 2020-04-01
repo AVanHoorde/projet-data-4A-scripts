@@ -90,79 +90,79 @@ func main() {
 				case 0:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.Identifiant = i
 				case 4:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.AdresseNumero = i
 				case 8:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.CodePostal = i
 				case 9:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.SurfaceCalculee = i
 				case 10:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.SuperficieTotaleReelle = i
 				case 11:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.SurfaceHorticole = i
 				case 13:
 					i, err := strconv.ParseFloat(field, 64)
 					if err != nil {
-						fmt.Println("Error converting float64")
+						fmt.Println("Error converting to float64")
 					}
 					e.Perimetre = i
 				case 14:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.AnneeOuverture = i
 				case 15:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.AnneeRenovation = i
 				case 17:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.AnneeChangementNom = i
 				case 18:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.NombreEntites = i
 				case 20:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.IdentifiantDivision = i
 				case 21:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					e.IdentifiantAtelierHorticole = i
 				}

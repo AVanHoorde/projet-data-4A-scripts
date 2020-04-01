@@ -67,37 +67,37 @@ func main() {
 				case 0:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.IdentifiantStation = i
 				case 3:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.CapaciteStation = i
 				case 4:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.NombreBornettesLibres = i
 				case 5:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.NombreTotalVelosDisponibles = i
 				case 6:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.VelosMecaniquesDisponibles = i
 				case 7:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.VelosElectriquesDisponibles = i
 				case 10:
@@ -106,7 +106,7 @@ func main() {
 				case 13:
 					i, err := strconv.Atoi(field)
 					if err != nil {
-						fmt.Println("Error converting int")
+						fmt.Println("Error converting to int")
 					}
 					s.CodeInseeCommunesEquipees = i
 				}
