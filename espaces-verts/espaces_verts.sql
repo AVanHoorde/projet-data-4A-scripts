@@ -1,5 +1,5 @@
 CREATE TABLE espaces_verts (
-	identifiant INT NOT NULL,
+    identifiant INT NOT NULL,
     nom VARCHAR,
     typologie VARCHAR,
     categorie VARCHAR,
