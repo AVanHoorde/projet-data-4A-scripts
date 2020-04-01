@@ -9,7 +9,7 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
-	database "github.com/louisl98/projet-data-scripts"
+	database "github.com/louislaugier/projet-data-scripts"
 )
 
 type station struct {
