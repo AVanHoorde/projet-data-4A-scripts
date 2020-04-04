@@ -1,16 +1,8 @@
 github.com/lib/pq v1.3.0 h1:/qkRGz8zljWiDcFvgpwUpwIAPu3r07TDvs3Rws+o/pU=
 github.com/lib/pq v1.3.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
-github.com/louisl98/go-CSV-SQL v0.0.0-20200329212457-74fa06291a71 h1:KHyyJ6OX4MRwYq1cr+4RFQ++HqRcIfsq03Qpd7hzeHQ=
-github.com/louisl98/go-CSV-sql v0.0.0-20200329212457-74fa06291a71 h1:Ucsu7U9PvIQJ7d+RNHbGmuTAO0EjOjYIj+zG5UyF8vw=
-github.com/louisl98/projet-data-scripts v0.0.0-20200329212457-74fa06291a71 h1:ScTGih/EZ4IQQbXKBO0Br0isbmz8NvaTP+6+d1Tmjv8=
-github.com/louisl98/projet-data-scripts v0.0.0-20200330152045-317a67ae1c3e h1:HCbLOjsh5XweWnu0cw2qTc1orKYqKSEDfO3+uVNMWgE=
-github.com/louisl98/projet-data-scripts v0.0.0-20200330205723-1e897a29aeca h1:hQh55kLBu4jKBMG+L9FQ76Yacd5hlh4dWFRKsuOcUEI=
-github.com/louisl98/projet-data-scripts v0.0.0-20200331174531-28ad81f5d4fe h1:y8m6vuQvKgHeBSzXZmRDXMKf0Kp68yVda1QdT1yWzDw=
-github.com/louisl98/projet-data-scripts v0.0.0-20200331210311-444687437f96 h1:BW/NU47ssldYrLh5Ecy70vB1OFH4Yxsbm99LQJcAjNs=
-github.com/louisl98/projet-data-scripts v0.0.0-20200331211543-c934fb9b95fe h1:sd43A6e3zCzdAflb6IwXxnFLgGkJpi4x45DyQgiB3rw=
-github.com/louisl98/projet-data-scripts v0.0.0-20200401123613-880ab24a7e61 h1:Ca+n4Mrxv3kqtUBWD+XILDmVI1McdqSk1gVFG2s7oV0=
 github.com/louislaugier/projet-data-scripts v0.0.0-20200401123613-880ab24a7e61 h1:o0aQ5cEm6hEvNH6sAUeimhFzhb1HJ0nGS6gCiwABTsQ=
 github.com/louislaugier/projet-data-scripts v0.0.0-20200401150031-aea2754e25f7 h1:+Gni2i8eVMSBpGwdCgLhKqdV4P80ji6S0DXyQRp7RLo=
 github.com/louislaugier/projet-data-scripts v0.0.0-20200401213023-836413adf89a h1:PLx9BPEv2QGP2mxSI13YhKHpKhEh7DJ0FQg6eStIW5U=
 github.com/louislaugier/projet-data-scripts v0.0.0-20200403203723-93e72404d26c h1:LFOSpWUd+2MioMBAHddXVHh1P9tf6mNASbiSJSBxJxg=
 github.com/louislaugier/projet-data-scripts v0.0.0-20200403212214-111f5085b801 h1:ohDn2ZDU5reLW38xxkM9LvIWLp00o9flwcors1mllUc=
+github.com/louislaugier/projet-data-scripts v0.0.0-20200403221441-fcc2abac6f61 h1:hagt7s3sci4OM8kdYmP+wEpCyL1YWN4VpVr8a4GfQnQ=

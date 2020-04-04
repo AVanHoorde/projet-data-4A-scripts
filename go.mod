@@ -1,4 +1,4 @@
-module github.com/louisl98/go-csv-sql
+module github.com/louislaugier/go-csv-sql
 
 go 1.13
 
