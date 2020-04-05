@@ -33,7 +33,7 @@ UPDATE ratp_stations SET transport_type = 'RER' WHERE 'coordinates' = '48.891826
 UPDATE ratp_stations SET transport_type = 'RER' WHERE 'coordinates' = '48.8484448201,2.39590723714';
 
 -- Define exterior train stations which have only 1 line
-UPDATE ratp_stations SET train_outside = TRUE WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Châtillon Montrouge','Chevaleret','Corvisart','Dupleix','Glacière');
+UPDATE ratp_stations SET train_outside = TRUE WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Châtillon Montrouge','Chevaleret','Corvisart','Dupleix','Glacière','La Chapelle','Malakoff-Rue Etienne Dolet','Nationale','Quai de la Gare','Sèvres-Lecourbe','Bel-Air','Créteil-L''Echat (Hôpital Henri Mondor)','Créteil-Préfecture (Hôtel de Ville)','Créteil-Université','Passy','Pointe du Lac','Quai de la Rapée','Saint-Jacques');
 
 -- Define exterior train stations which have several lines by their coordinates
 -- Bastille, Barbès-Rochechouart, Stalingrad, Jaurès, Gare d'Austerlitz, La Motte-Picquet-Grenelle
@@ -41,20 +41,20 @@ UPDATE ratp_stations SET train_outside = TRUE WHERE "coordinates" IN ('48.853389
 
 -- Add lines for train stations which have only 1 line
 UPDATE ratp_stations SET line = '1' WHERE "name" IN ('','');
-UPDATE ratp_stations SET line = '2' WHERE "name" IN ('','');
+UPDATE ratp_stations SET line = '2' WHERE "name" IN ('La Chapelle','');
 UPDATE ratp_stations SET line = '3' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '3bis' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '4' WHERE "name" IN ('','');
-UPDATE ratp_stations SET line = '5' WHERE "name" IN ('','');
-UPDATE ratp_stations SET line = '6' WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Chevaleret','Corvisart','Dupleix','Glacière');
+UPDATE ratp_stations SET line = '5' WHERE "name" IN ('Quai de la Rapée','');
+UPDATE ratp_stations SET line = '6' WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Chevaleret','Corvisart','Dupleix','Glacière','Quai de la Gare','Sèvres-Lecourbe','Bel-Air','Passy','Saint-Jacques');
 UPDATE ratp_stations SET line = '7' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '7bis' WHERE "name" IN ('','');
-UPDATE ratp_stations SET line = '8' WHERE "name" IN ('','');
+UPDATE ratp_stations SET line = '8' WHERE "name" IN ('Créteil-L''Echat (Hôpital Henri Mondor)','Créteil-Préfecture (Hôtel de Ville)','Créteil-Université','Pointe du Lac');
 UPDATE ratp_stations SET line = '9' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '10' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '11' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = '12' WHERE "name" IN ('','');
-UPDATE ratp_stations SET line = '13' WHERE "name" IN ('Châtillon Montrouge','');
+UPDATE ratp_stations SET line = '13' WHERE "name" IN ('Châtillon Montrouge','Malakoff-Rue Etienne Dolet');
 UPDATE ratp_stations SET line = '14' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = 'A' WHERE "name" IN ('','');
 UPDATE ratp_stations SET line = 'B' WHERE "name" IN ('','');
