@@ -6,10 +6,9 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"time"
 
 	_ "github.com/lib/pq"
-	database "github.com/louislaugier/projet-data-scripts"
+	database "github.com/louislaugier/projet-data-4A-scripts"
 )
 
 type station struct {

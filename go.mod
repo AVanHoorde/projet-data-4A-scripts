@@ -1,4 +1,4 @@
-module github.com/louislaugier/go-csv-sql
+module github.com/louislaugier/projet-data-4A-scripts
 
 go 1.13
 
