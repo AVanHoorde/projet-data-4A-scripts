@@ -35,7 +35,7 @@ UPDATE ratp_stations SET transport_type = 'RER' WHERE 'coordinates' = '48.848444
 UPDATE ratp_stations SET transport_type = 'RER' WHERE 'coordinates' = '48.8484448201,2.39590723714'
 
 -- Define exterior train stations which have only 1 line
-UPDATE ratp_stations SET train_outside = TRUE WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Châtillon Montrouge','Chevaleret','Corvisart','Dupleix','Glacière','La Chapelle','Malakoff-Rue Etienne Dolet','Nationale','Quai de la Gare','Sèvres-Lecourbe','Bel-Air','Créteil-L''Echat (Hôpital Henri Mondor)','Créteil-Préfecture (Hôtel de Ville)','Créteil-Université','Passy','Pointe du Lac','Quai de la Rapée','Saint-Jacques','Cergy-Le-Haut','Cergy-Saint-Christophe','Fontenay-sous-Bois','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+UPDATE ratp_stations SET train_outside = TRUE WHERE "name" IN ('Bir-Hakeim (Grenelle)','Cambronne','Châtillon Montrouge','Chevaleret','Corvisart','Dupleix','Glacière','La Chapelle','Malakoff-Rue Etienne Dolet','Nationale','Quai de la Gare','Sèvres-Lecourbe','Bel-Air','Créteil-L''Echat (Hôpital Henri Mondor)','Créteil-Préfecture (Hôtel de Ville)','Créteil-Université','Passy','Pointe du Lac','Quai de la Rapée','Saint-Jacques','Cergy-Le-Haut','Cergy-Saint-Christophe','Fontenay-sous-Bois','Marne-la-Vallée Chessy','Neuville-Université','Achères-Ville','Poissy','Achères Grand Cormier','Maisons-Laffitte','Sartrouville','Houilles Carrières-sur-Seine','Le Vésinet-Le Pecq','Le Vésinet-Centre','Chatou-Croissy','Nanterre-Ville','Nanterre-Université','Le Parc de Saint-Maur','La Varenne-Chennevières','Sucy Bonneuil','Boissy-Saint-Léger','Noisy-Champs','Noisiel','Lognes','Torcy','Val d''Europe','Conflans-Fin d''Oise','Rueil-Malmaison','Joinville-le-Pont','Saint-Maur Créteil','Champigny','Neuilly-Plaisance','Bry-sur-Marne','','','','','','','','','','','','','','','','','','','');
 
 -- Define exterior train stations which have several lines by their coordinates
 -- Bastille, Barbès-Rochechouart, Stalingrad, Jaurès, Gare d'Austerlitz, La Motte-Picquet-Grenelle
@@ -58,7 +58,7 @@ UPDATE ratp_stations SET line = '11' WHERE "name" IN ('Goncourt (Hôpital Saint-
 UPDATE ratp_stations SET line = '12' WHERE "name" IN ('Abbesses','Assemblée Nationale','Convention','Corentin-Celton','Falguière','Front Populaire','Jules Joffrin','Lamarck-Caulaincourt','Mairie d''Issy','Marx-Dormoy','Notre-Dame de Lorette','Notre-Dame des Champs','Porte de la Chapelle','Porte de Versailles','Rennes','Rue du Bac','Saint-Georges','Solférino','Trinité-d''Estienne d''Orves','Vaugirard (Adolphe Chérioux)','Volontaires')
 UPDATE ratp_stations SET line = '13' WHERE "name" IN ('Châtillon Montrouge','Malakoff-Rue Etienne Dolet','Basilique de Saint-Denis','Brochant','Carrefour-Pleyel','Gabriel-Péri','Gaîté','Garibaldi','Guy-Môquet','La Fourche','Les Agnettes','Les Courtilles','Liège','Mairie de Clichy','Mairie de Saint-Ouen','Malakoff-Plateau de Vanves','Pernety','Plaisance','Porte de Clichy','Porte de Saint-Ouen','Porte de Vanves','Saint-Denis - Porte de Paris','Saint-Denis-Université','Saint-François-Xavier','Varenne')
 UPDATE ratp_stations SET line = '14' WHERE "name" IN ('Bibliothèque-François Mitterrand','Cour Saint-Emilion','Olympiades')
-UPDATE ratp_stations SET line = 'A' WHERE "name" IN ('Cergy-Le-Haut','Cergy-Saint-Christophe','Fontenay-sous-Bois','','','','','')
+UPDATE ratp_stations SET line = 'A' WHERE "name" IN ('Cergy-Le-Haut','Cergy-Saint-Christophe','Fontenay-sous-Bois','Marne-la-Vallée Chessy','Cergy-Préfecture','Saint-Germain-en-Laye','Nanterre-Préfecture','Vincennes','Nogent-sur-Marne','Noisy-le-Grand (Mont d''Est)','Bussy-Saint-Georges','Neuville-Université','Achères-Ville','Poissy','Achères Grand Cormier','Maisons-Laffitte','Sartrouville','Houilles Carrières-sur-Seine','Le Vésinet-Le Pecq','Le Vésinet-Centre','Chatou-Croissy','Nanterre-Ville','Nanterre-Université','Le Parc de Saint-Maur','La Varenne-Chennevières','Sucy Bonneuil','Boissy-Saint-Léger','Noisy-Champs','Noisiel','Lognes','Torcy','Val d''Europe','Conflans-Fin d''Oise','Rueil-Malmaison','Joinville-le-Pont','Saint-Maur Créteil','Champigny','Neuilly-Plaisance','Bry-sur-Marne','Val de Fontenay','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')
 UPDATE ratp_stations SET line = 'B' WHERE "name" IN ('','','','','','','','')
 
 -- Add lines for train stations which have several lines by their coordinates
@@ -94,7 +94,9 @@ UPDATE ratp_stations SET line = '12' WHERE "coordinates" IN ('48.8654893909,2.32
 UPDATE ratp_stations SET line = '13' WHERE "coordinates" IN ('48.8677440261,2.31412278037','48.8469925009,2.31654234477','48.8608507897,2.31454811263','48.8735321406,2.31557802487','48.8418703363,2.321228374','48.8832039999,2.32726602464','48.8756815064,2.32559158482')
 -- Bercy, Châtelet, Gare de Lyon, Madeleine, Pyramides, Saint-Lazare,
 UPDATE ratp_stations SET line = '14' WHERE "coordinates" IN ('48.8401922444,2.37947725727','48.8585696725,2.34793324584','48.844652151,2.37310814755','48.8697947152,2.32461201202','48.8666138306,2.33440753095','48.8760678144,2.32418810077')
-UPDATE ratp_stations SET line = 'A' WHERE "name" IN ('','')
-UPDATE ratp_stations SET line = 'B' WHERE "name" IN ('','')
+-- La Défense, Charles de Gaulle - Étoile, Auber, Nation, Châtelet - Les Halles, Gare de Lyon
+UPDATE ratp_stations SET line = 'A' WHERE "coordinates" IN ('48.8918267548,2.23799204322','48.8739040986,2.29503190105','48.8726081799,2.32970681645','48.8484448201,2.39590723714','48.8614637106,2.3468441316','48.844472156,2.3739114213')
+-- Châtelet - Les Halles, 
+UPDATE ratp_stations SET line = 'B' WHERE "coordinates" IN ('48.8617962475,2.34680332871','')
 
 -- Remove identical db records
