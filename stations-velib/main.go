@@ -101,7 +101,10 @@ func main() {
 					}
 					s.VelosElectriquesDisponibles = i
 				case 10:
-					i := field.String()
+					i, err := time.Parse("Mon Jan 2 15:04:05 -0700 MST 2006", field)
+					if err != nil {
+						fmt.Println("Error converting to timestamp")
+					}
 					s.DerniereActualisation = i
 				case 13:
 					i, err := strconv.Atoi(field)
