@@ -12,7 +12,7 @@ ALTER TABLE ratp_stations
     ADD transport_type VARCHAR DEFAULT 'bus' NOT NULL,
     ADD line VARCHAR NULL,
     ADD line_index INTEGER;
--- Manually enter line order for segments on map
+-- Manually enter line index for each station to trace lines on map
 
 -- Define records with non-UPPERCASE names as metros
 UPDATE ratp_stations
@@ -72,8 +72,8 @@ UPDATE ratp_stations SET line = '2' WHERE "coordinates" IN ('48.8839317699,2.349
 UPDATE ratp_stations SET line = '3' WHERE "coordinates" IN ('48.8655518636,2.35610815512','48.8647827007,2.39844583377','48.8734618907,2.32848048447','48.8707209763,2.33225474357','48.8629456617,2.38689240454','48.8662803586,2.35248479684','48.8672579436,2.36403730364','48.8755376704,2.32519648998','48.8814051004,2.31614705091');
 -- Gambetta, Porte des Lilas
 UPDATE ratp_stations SET line = '3bis' WHERE "coordinates" IN ('48.865034298,2.39854148691','48.8769382235,2.40637656693');
--- Barbès-Rochechouart, Châtelet, Gare de l'Est, Gare du Nord, Marcadet - Poissonniers, Montparnasse - Bienvenüe, Odéon, Raspail, Réaumur-Sébastopol, Strasbourg-Saint-Denis
-UPDATE ratp_stations SET line = '4' WHERE "coordinates" IN ('48.8836801093,2.34953280365','48.858300056,2.34786508758','48.8764170529,2.35898704646','48.8793833026,2.35637208136','48.8915439306,2.34937111538','48.8441895085,2.32444123243','48.8521980452,2.33878000304','48.8388783786,2.33067841929','48.8660466696,2.35262095402','48.869227931,2.35452917539');
+-- Barbès-Rochechouart, Châtelet, Gare de l'Est, Denfert-Rochereau, Gare du Nord, Marcadet - Poissonniers, Montparnasse - Bienvenüe, Odéon, Raspail, Réaumur-Sébastopol, Strasbourg-Saint-Denis
+UPDATE ratp_stations SET line = '4' WHERE "coordinates" IN ('48.8836801093,2.34953280365','48.858300056,2.34786508758','48.8764170529,2.35898704646','48.8333151859,2.33344276383','48.8793833026,2.35637208136','48.8915439306,2.34937111538','48.8441895085,2.32444123243','48.8521980452,2.33878000304','48.8388783786,2.33067841929','48.8660466696,2.35262095402','48.869227931,2.35452917539');
 -- Bastille, Stalingrad, Jaurès, Gare d'Austerlitz, Gare de l'Est, Gare du Nord, Oberkampf, Place d'Italie, République
 UPDATE ratp_stations SET line = '5' WHERE "coordinates" IN ('48.8529756747,2.36921882444','48.8841532631,2.36735747747','48.8823280249,2.37047696877','48.8437198614,2.36391621716','48.8768126254,2.35825144008','48.8797430642,2.35460081047','48.8649742906,2.36763241156','48.8315523026,2.35533344322','48.8674108288,2.36358782556');
 -- La Motte-Picquet-Grenelle, Bercy, Charles de Gaulle - Étoile, Daumesnil, Denfert-Rochereau, Montparnasse - Bienvenüe, Nation, Place d'Italie, Raspail, Trocadéro, Pasteur
@@ -82,8 +82,8 @@ UPDATE ratp_stations SET line = '6' WHERE "coordinates" IN ('48.8490189283,2.297
 UPDATE ratp_stations SET line = '7' WHERE "coordinates" IN ('48.8840719864,2.36887006278','48.8572036455,2.34722471106','48.8728599894,2.33304475093', '48.876695836,2.35799251055','48.8459684322,2.35480739269','48.8809004282,2.36510721826','48.8706310801,2.33173704836','48.8623718215,2.33657360074','48.8311118383,2.35579614571','48.866496987,2.33409421526');
 -- Jaurès, Louis Blanc, Place des Fêtes
 UPDATE ratp_stations SET line = '7bis' WHERE "coordinates" IN ('48.8828762162,2.37058633617','48.8814934289,2.36577524235','48.8767294689,2.39314603177');
--- Bastille, La Motte-Picquet-Grenelle, Bonne-Nouvelle, Concorde, Daumesnil, Denfert-Rochereau, Grands Boulevards, Invalides, Madeleine, Opéra, République, Reuilly-Diderot, Richelieu-Drouot, Strasbourg-Saint-Denis
-UPDATE ratp_stations SET line = '8' WHERE "coordinates" IN ('48.853739623,2.36916481786','48.8488212667,2.29795296403','48.8705767536,2.34849429371','48.8655072215,2.32036285586','48.8393764631,2.39578806042','48.8333151859,2.33344276383','48.8715118171,2.34320837754','48.8610934676,2.31464335535','48.8695789706,2.32416248879','48.8705592165,2.33255448205','48.867671519,2.36332912078','48.847352877,2.38584254004','48.8720961238,2.33932555586','48.8696323652,2.35450206309');
+-- Bastille, La Motte-Picquet-Grenelle, Bonne-Nouvelle, Concorde, Daumesnil, Grands Boulevards, Invalides, Madeleine, Opéra, République, Reuilly-Diderot, Richelieu-Drouot, Strasbourg-Saint-Denis
+UPDATE ratp_stations SET line = '8' WHERE "coordinates" IN ('48.853739623,2.36916481786','48.8488212667,2.29795296403','48.8705767536,2.34849429371','48.8655072215,2.32036285586','48.8393764631,2.39578806042','48.8715118171,2.34320837754','48.8610934676,2.31464335535','48.8695789706,2.32416248879','48.8705592165,2.33255448205','48.867671519,2.36332912078','48.847352877,2.38584254004','48.8720961238,2.33932555586','48.8696323652,2.35450206309');
 -- Bonne-Nouvelle, Chaussée d'Antin - La Fayette, Franklin D. Roosevelt, Grands Boulevards, Havre - Caumartin, Michel-Ange - Auteuil, Michel-Ange - Molitor, Miromesnil, Nation, Oberkampf, République, Richelieu-Drouot, Strasbourg-Saint-Denis, Trocadéro
 UPDATE ratp_stations SET line = '9' WHERE "coordinates" IN ('48.8704958323,2.34886211744','48.8729858247,2.33342622405','48.8688126319,2.30992632447','48.8715747436,2.34289503198','48.8734259765,2.3289709733','48.8479245928,2.26423590578','48.845056129,2.26191142328','48.8734603255,2.31604128892','48.8481112316,2.3980040128','48.8649024159,2.36753701348','48.8676174865,2.36381952143','48.872006239,2.33991139061','48.8693807801,2.3540796522','48.8626669059,2.28726306155');
 -- Gare d'Austerlitz, La Motte-Picquet-Grenelle, Duroc, Jussieu, Michel-Ange - Auteuil, Michel-Ange - Molitor, Odéon, Sèvres-Babylone
