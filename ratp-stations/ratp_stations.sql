@@ -10,12 +10,14 @@ CREATE TABLE ratp_stations (
 ALTER TABLE ratp_stations
     ADD train_outside BOOLEAN DEFAULT FALSE NOT NULL,
     ADD transport_type VARCHAR DEFAULT 'bus' NOT NULL,
-    ADD line VARCHAR NULL;
-    
+    ADD line VARCHAR NULL,
+    ADD line_index INTEGER;
+-- Manually enter line order for segments on map
+
 -- Define records with non-UPPERCASE names as metros
 UPDATE ratp_stations
     SET transport_type = 'métro'
-    WHERE 'name' <> UPPER('name');
+    WHERE name <> UPPER(name);
 
 -- Define RER stations with unique names
 UPDATE ratp_stations SET transport_type = 'RER' WHERE "name" IN ('Achères Grand Cormier','Achères-Ville','Aéroport Charles de Gaulle 1','Aéroport Charles de Gaulle 2 TGV','Antony','Arcueil-Cachan','Auber','Aulnay-sous-Bois','Bagneux','Boissy-Saint-Léger','Bourg-la-Reine','Bry-sur-Marne','Bures-sur-Yvette','Bussy-Saint-Georges','Cergy-Le-Haut','Cergy-Préfecture','Cergy-Saint-Christophe','Champigny','Châtelet-Les Halles','Chatou-Croissy','Cité Universitaire','Conflans-Fin d''Oise','Courcelle-sur-Yvette','Drancy','Fontaine-Michalon','Fontenay-aux-Roses','Fontenay-sous-Bois','Gentilly','Gif-sur-Yvette','Houilles Carrières-sur-Seine','Joinville-le-Pont','La Courneuve-Aubervilliers','La Croix-de-Berny','La Hacquinière','La Plaine-Stade de France','La Varenne-Chennevières','Laplace','Le Blanc-Mesnil','Le Bourget','Le Guichet','Le Parc de Saint-Maur','Le Vésinet-Centre','Le Vésinet-Le Pecq','Les Baconnets','Lognes','Lozère','Luxembourg','Maisons-Laffitte','Marne-la-Vallée Chessy','Massy-Palaiseau','Massy-Verrières','Mitry-Claye','Nanterre-Préfecture','Nanterre-Université','Nanterre-Ville','Neuilly-Plaisance','Neuville-Université','Nogent-sur-Marne','Noisiel','Noisy-Champs','Noisy-le-Grand (Mont d''Est)','Orsay-Ville','Palaiseau','Palaiseau Villebon','Parc de Sceaux','Parc des Expositions','Poissy','Port-Royal','Robinson','Rueil-Malmaison','Saint-Germain-en-Laye','Saint-Maur Créteil','Saint-Michel Notre-Dame','Saint-Rémy-lès-Chevreuse','Sartrouville','Sceaux','Sevran-Beaudottes','Sevran Livry','Sucy Bonneuil','Torcy','Val d''Europe','Val de Fontenay','Vert-Galant','Villeparisis','Villepinte','Vincennes');
@@ -98,5 +100,3 @@ UPDATE ratp_stations SET line = '14' WHERE "coordinates" IN ('48.8401922444,2.37
 UPDATE ratp_stations SET line = 'A' WHERE "coordinates" IN ('48.8918267548,2.23799204322','48.8739040986,2.29503190105','48.8726081799,2.32970681645','48.8484448201,2.39590723714','48.8614637106,2.3468441316','48.844472156,2.3739114213');
 -- Châtelet - Les Halles, Denfert-Rochereau, Gare du Nord, Saint-Michel Notre-Dame
 UPDATE ratp_stations SET line = 'B' WHERE "coordinates" IN ('48.8617962475,2.34680332871','48.8342768128,2.3322037973','48.8808392058,2.35657701535','48.8536807808,2.34424139962');
-
--- Remove identical db records
