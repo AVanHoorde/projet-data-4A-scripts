@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/go,linux,macos,windows
 # Edit at https://www.gitignore.io/?templates=go,linux,macos,windows
 
+# Airparif API key
+command.txt
+
 ### Go ###
 # Database
 database.go
