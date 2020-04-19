@@ -1,1 +1,0 @@
-curl -H "Content-Type:text/xml" -d @request.xml -X POST http://magellan.airparif.asso.fr/geoserver/WPS/wps?authkey=a0e3007b-f577-5ee7-6366-f3442ac1179e > results.geojson
