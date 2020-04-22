@@ -1,4 +1,4 @@
-CREATE TABLE trajets_maratp (
+CREATE TABLE trajets_fake_data (
     id INT,
     coords_point_depart VARCHAR NOT NULL,
     coords_point_arrivee VARCHAR NOT NULL,
